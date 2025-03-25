@@ -7,15 +7,18 @@ import "./success.css"
 
 function Success() {
   return (
-    <>
+    
+    <main>
+    <div className='success'>
   <img src="/images/iteration-1-images/logo.svg" alt="logo" />
-    <section>
+  </div>
+    
       <div className="success-page">
         <p>TEBRİKLER!</p>
           <p>SİPARİŞİNİZ ALINDI!</p>
       </div>
-    </section>
-    </>
+    
+    </main>
   
   );
 }
