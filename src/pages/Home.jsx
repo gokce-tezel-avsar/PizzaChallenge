@@ -4,20 +4,18 @@ import "./home.css"
 
 function Home() {
   return (
-    <main className="home"> 
-       <img src="" alt="backgroundimage" />
-         <img src="" alt='logo' />
+    <><img className="background" src="/images/iteration-1-images/home-banner.png" alt="backgroundimage" />
+    
+    <main className="home">
+    <img className="background" src="/images/iteration-1-images/home-banner.png" alt="backgroundimage" />
+      <img src="/images/iteration-1-images/logo.svg" alt="logo" />
 
-         <div className='home-content'> 
-        <h1>KOD ACIKTIRIR</h1>
-        <h1>PİZZA, DOYURUR</h1>
-  
+      <div className='baslik-section'> 
+        <p>KOD ACIKTIRIR</p>
+        <p>PİZZA, DOYURUR</p>
         <AciktimBtn />
-
-        
-   </div>
-  
-    </main>
+        </div>
+    </main></>
   )
 }
 

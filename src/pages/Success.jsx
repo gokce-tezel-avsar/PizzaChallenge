@@ -4,10 +4,11 @@ import "./success.css"
 
 
 
+
 function Success() {
   return (
     <>
-    <img src="logo" alt="logo" />
+  <img src="/images/iteration-1-images/logo.svg" alt="logo" />
     <section>
       <div className="success-page">
         <p>TEBRİKLER!</p>

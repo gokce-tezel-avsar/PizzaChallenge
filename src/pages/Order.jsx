@@ -40,7 +40,7 @@ function Order() {
   return (
     <>
     <header>
-    <img src="logo" alt="logo" />
+    <img src="/images/iteration-1-images/logo.svg" alt="logo" />
         <Nav>
         
           <NavLink
