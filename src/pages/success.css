@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: red;
+    height: 100vh;
+
+}
+
+img{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+}
+p{
+    color:white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto condensed",light 300;
+    font-size: 2rem;
+    height: fit-content;
+}

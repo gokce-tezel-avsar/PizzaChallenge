@@ -1,0 +1,88 @@
+div#root{
+    margin:0;
+    padding:0;
+    height: 100vh;
+   display: flex;
+
+    justify-content: center;
+    width: 100%; 
+
+
+}
+header{
+    display: flex;
+    background: red;
+    justify-content: center;
+    height: fit-content;
+    position: absolute;
+    width: 100vw;
+    padding:5%
+}
+header img {
+    justify-content: center;
+}
+
+section{
+    background-color: white;
+
+}
+h1{
+    color: black;
+}
+p{
+    color: black;
+}
+
+
+form{
+    background: white
+}
+
+.boyut-form p {
+    color:black;
+    font-size: 1.5rem;
+   
+}
+.boyut-form{
+    padding: 10px;
+    display: flex;
+    flex-direction:row;
+    align-items:last baseline
+    color: black;
+    width: 30%;
+    f;
+
+
+}
+.hamur-form p{
+    color: black;
+    font-size: 1.5rem;;
+}
+.hamur-form {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.topping-form p{
+    color: black;
+    font-size: 1.5rem;
+}
+.topping-form{
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start ;
+    color: black;
+}
+.not-form p{
+    color:black;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    align-items: center;
+    justify-content: center;
+}

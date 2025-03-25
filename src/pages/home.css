@@ -1,0 +1,39 @@
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #CE2829;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+h1{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    color: #292929;
+}
+button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDC913;
+    width: min-content
+}
+
+/*Sarı #FDC913
+Açık Gri: #5F5F5F
+Koyu Gri #292929
+Kırmızı #CE2829
+Bej: #FAF7F2
