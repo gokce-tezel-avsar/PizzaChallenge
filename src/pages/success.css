@@ -1,0 +1,39 @@
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #cf372c;
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+.sayfa{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    margin:3rem;
+}
+
+.logo-container{
+    margin-top:1rem;
+    margin-bottom: 15rem;
+}
+
+.paragraf-container{  
+display: flex;
+flex-direction: column;
+font-size: 4rem;
+color: white;
+justify-content: center;
+
+
+}
+p{
+margin: 0;
+display:flex;
+flex-direction: column;
+font-family: "roboto condensed";font-weight: lighter;
+text-align: center;
+}
