@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
  const Button = styled.button`
   background:#FDC913;
-  padding:1rem 3rem;
-  border-radius:2rem;
+  padding:1.5rem 4rem;
+  border-radius:3rem;
   border:#FDC913;
-  margin:1rem
+  margin:3rem
   `
 
 
