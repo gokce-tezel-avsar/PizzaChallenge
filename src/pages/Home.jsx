@@ -1,20 +1,60 @@
 import React from 'react'
 import AciktimBtn from '../components/AciktimBtn'
-import "./home.css"
+import styled from 'styled-components'
+
+const Header = styled.header`
+position: relative;
+display:flex;
+justify-content: center`
+
+
+const Logo = styled.img`
+position: relative;
+margin: 3rem;
+`;
+const Hero = styled.div`
+  position: absolute;
+  background-image: url('/images/iteration-1-images/home-banner.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0
+`;
+
+const Section = styled.section`
+position: relative;
+display:flex;
+flex-direction:column;
+align-items:center;
+font-family:"Roboto condensed"
+`
+
+const Paragraf = styled.p`
+color:white;
+font-size:4rem;
+padding:0.5rem;
+`
+
+
+
 
 function Home() {
   return (
-    <><img className="background" src="/images/iteration-1-images/home-banner.png" alt="backgroundimage" />
-    
-    <main className="home">
-    <img className="background" src="/images/iteration-1-images/home-banner.png" alt="backgroundimage" />
-      <img src="/images/iteration-1-images/logo.svg" alt="logo" />
 
-      <div className='baslik-section'> 
-        <p>KOD ACIKTIRIR</p>
-        <p>PİZZA, DOYURUR</p>
+    <>
+    
+       <main className="home">
+       
+           <Hero src="/images/iteration-1-images/home-banner.png" alt="backgroundimage" />
+        <Header>
+          <Logo src="/images/iteration-1-images/logo.svg" alt="logo" /></Header>
+
+      <Section > 
+        <Paragraf>KOD ACIKTIRIR</Paragraf>
+        <Paragraf>PİZZA, DOYURUR</Paragraf>
         <AciktimBtn />
-        </div>
+        </Section>
     </main></>
   )
 }

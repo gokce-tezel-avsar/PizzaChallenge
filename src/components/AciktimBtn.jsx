@@ -3,10 +3,14 @@ import { useHistory} from 'react-router-dom'
 import styled from 'styled-components';
 
 
-const Button = styled.button`
- background-color:#FDC913
- color:white;
- `
+ const Button = styled.button`
+  background:#FDC913;
+  padding:1rem 3rem;
+  border-radius:2rem;
+  border:#FDC913;
+  margin:1rem
+  `
+
 
 function AciktimBtn() {
   let history = useHistory();

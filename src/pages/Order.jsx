@@ -38,8 +38,8 @@ function Order() {
   };
 
   return (
-    <>
-    <header>
+    <div className='div'>
+    <header className='header'>
     <img src="/images/iteration-1-images/logo.svg" alt="logo" />
         <Nav>
         
@@ -64,12 +64,14 @@ function Order() {
         </Nav>
         </header>
       
-      <section>
+      <main className='main'>
+        <div className="main-baslik">
         <h1>Absolute Acılı Pizza</h1>
         <Price>85.50₺</Price> <span>(400)</span> <span>4.9</span>
+        </div>
         <p>Frontend Dev olaraka hala position absolute pizza</p>
-      </section>
-
+      </main>
+    <div>
       <form className="boyut-form">
         <p>Boyut Seç</p>
         <label>
@@ -127,7 +129,8 @@ function Order() {
           </label>
         ))}
       </form>
-
+      </div>
+<div>
       <form className="not-form">
         <p>Sipariş Notu</p>
         <textarea
@@ -139,8 +142,9 @@ function Order() {
         <SubmitBtn onSubmit={handleSubmit} />
       </form>
       <hr />
+      </div>
      
-    </>
+    </div>
   );
 }
 
