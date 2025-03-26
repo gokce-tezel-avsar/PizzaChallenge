@@ -9,8 +9,8 @@ justify-content: center`
 
 
 const Logo = styled.img`
-position: relative;
-margin: 3rem;
+margin-top: 4rem;
+margin-bottom:3rem;
 `;
 const Hero = styled.div`
   position: absolute;
@@ -32,8 +32,9 @@ font-family:"Roboto condensed"
 
 const Paragraf = styled.p`
 color:white;
-font-size:4rem;
-padding:0.5rem;
+text-align:center;
+margin:0;
+font-size:3rem;
 `
 
 

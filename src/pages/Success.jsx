@@ -1,24 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
-import "./success.css"
 
+const sayfaStili = {
+  backgroundColor:"red",
+  witdh:"100%",
+  heigth:"100%"
 
+}
+
+const Logo = styled.img`
+display:block;
+align-item:center;
+`
+
+const Paragraf = styled.p`
+font-size: 3rem;
+color: white;
+align-items: center;
+justify-content: center;`
+
+const Section = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 
 
 function Success() {
   return (
     
-    <main>
-    <div className='success'>
-  <img src="/images/iteration-1-images/logo.svg" alt="logo" />
-  </div>
+    <div style={sayfaStili}>
+
+       <Logo src="/images/iteration-1-images/logo.svg" alt="logo" />
     
-      <div className="success-page">
-        <p>TEBRİKLER!</p>
-          <p>SİPARİŞİNİZ ALINDI!</p>
-      </div>
+      <Section>
+         <Paragraf>TEBRİKLER!</Paragraf>
+          <Paragraf>SİPARİŞİNİZ ALINDI!</Paragraf>
+      </Section>
     
-    </main>
+    </div>
   
   );
 }

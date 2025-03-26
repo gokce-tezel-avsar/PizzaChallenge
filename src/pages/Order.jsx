@@ -1,150 +1,120 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SubmitBtn from '../components/SubmitBtn.jsx';
-import "./order.css"
+import { Link  } from 'react-router-dom';
+import axios from "axios";
 
-const Nav = styled.nav`
+const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width:100vw;
+  height:auto;
+  margin: 0;
+  background-color: red;
+`;
+
+const Logo = styled.img`
+  justify-content: center;
+  padding: 2rem;
+`;
+
+const StyledNav = styled.nav`
   display: flex;
   gap: 1rem;
 `;
 
-const Price = styled.span`
-  font-weight: bold;
-  color: black;
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+
+`;
+
+const Section = styled.section`
+  display: flex;
+  width:100wv;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+
 `;
 
 function Order() {
-  const [boyut, setBoyut] = useState('küçük');
-  const [hamur, setHamur] = useState('ince');
-  const [toppings, setToppings] = useState([]);
-  const [note, setNote] = useState('');
-
-  const handleToppingChange = (e) => {
-    const { value, checked } = e.target;
-    setToppings((prev) =>
-      checked ? [...prev, value] : prev.filter((topping) => topping !== value)
-    );
-  };
-  const handleSubmit = () => {
-    const orderDetails = {
-      boyut,
-      hamur,
-      toppings,
-      note,
-    };
-    console.log('Order submitted:', orderDetails);
-    alert('Siparişiniz başarıyla oluşturuldu!');
-  };
-
   return (
-    <div className='div'>
-    <header className='header'>
-    <img src="/images/iteration-1-images/logo.svg" alt="logo" />
-        <Nav>
-        
-          <NavLink
-            to="/anasayfa"
-            className={({ isActive }) => (isActive ? 'font-bold' : 'font-normal')}
-          >
-            Anasayfa
-          </NavLink>
-          <NavLink
-            to="/seçenekler"
-            className={({ isActive }) => (isActive ? 'font-bold' : 'font-normal')}
-          >
-            Seçenekler
-          </NavLink>
-          <NavLink
-            to="/sipariş-oluştur"
-            className={({ isActive }) => (isActive ? 'font-bold' : 'font-normal')}
-          >
-            Sipariş Oluştur
-          </NavLink>
-        </Nav>
-        </header>
-      
-      <main className='main'>
-        <div className="main-baslik">
-        <h1>Absolute Acılı Pizza</h1>
-        <Price>85.50₺</Price> <span>(400)</span> <span>4.9</span>
-        </div>
-        <p>Frontend Dev olaraka hala position absolute pizza</p>
-      </main>
+    <>
     <div>
-      <form className="boyut-form">
-        <p>Boyut Seç</p>
-        <label>
-          <input
-            checked={boyut === 'küçük'}
-            name="boyut"
-            type="radio"
-            value="küçük"
-            onChange={(e) => setBoyut(e.target.value)}
-          />
-          Küçük
-        </label>
-        <label>
-          <input
-            checked={boyut === 'orta'}
-            name="boyut"
-            type="radio"
-            value="orta"
-            onChange={(e) => setBoyut(e.target.value)}
-          />
-          Orta
-        </label>
-        <label>
-          <input
-            checked={boyut === 'büyük'}
-            name="boyut"
-            type="radio"
-            value="büyük"
-            onChange={(e) => setBoyut(e.target.value)}
-          />
-          Büyük
-        </label>
-      </form>
+      <Header>
+        <Logo src="/images/iteration-1-images/logo.svg" alt="logo" />
+        <StyledNav>
+          <StyledLink to="/anasayfa">Anasayfa</StyledLink>
+          <StyledLink to="/seçenekler">Seçenekler</StyledLink>
+          <StyledLink to="/sipariş-oluştur">Sipariş Oluştur</StyledLink>
+        </StyledNav>
+      </Header>
 
-      <form className="hamur-form">
-        <p>Hamur Kalınlığı</p>
-        <select value={hamur} onChange={(e) => setHamur(e.target.value)}>
-          <option value="ince">İnce</option>
-          <option value="orta">Orta</option>
-          <option value="kalin">Kalın</option>
-        </select>
-      </form>
+      <Section>
+        <h1>Absolute Acılı Pizza</h1>
+        <p>85.50₺</p> <p>(400)</p> <p>4.9</p>
+      </Section>
+      <p>Frontend Dev olarak hala position absolute pizza</p>
+</div>
+      <div>
+        <form>
+          <p>Boyut Seç</p>
+          {['Küçük', 'Orta', 'Büyük'].map((size) => (
+            <label key={size}>
+              <input name="boyut" type="radio" value={size.toLowerCase()} />
+              {size}
+            </label>
+          ))}
+        </form>
 
-      <form className="topping-form">
-        <p>Ek Malzemeler</p>
-        {['Pepperoni', 'Sosis', 'Kanada Jambonu', 'Tavuk Izgara', 'Soğan', 'Domates', 'Mısır', 'Sucuk', 'Jalepeno', 'Sarımsak', 'Biber', 'Ananas', 'Kabak'].map((topping) => (
-          <label key={topping}>
-            <input
-              type="checkbox"
-              value={topping}
-              checked={toppings.includes(topping)}
-              onChange={handleToppingChange}
-            />
-            {topping}
-          </label>
-        ))}
-      </form>
+        <form className="hamur-form">
+          <p>Hamur Kalınlığı</p>
+          <select>
+            <option value="ince">İnce</option>
+            <option value="orta">Orta</option>
+            <option value="kalın">Kalın</option>
+          </select>
+        </form>
+
+        <form className="topping-form">
+          <p>Ek Malzemeler</p>
+          {[
+            'Pepperoni',
+            'Sosis',
+            'Kanada Jambonu',
+            'Tavuk Izgara',
+            'Soğan',
+            'Domates',
+            'Mısır',
+            'Sucuk',
+            'Jalepeno',
+            'Sarımsak',
+            'Biber',
+            'Ananas',
+            'Kabak',
+          ].map((topping, index) => (
+            <label key={index}>
+              <input type="checkbox" value={topping} />
+              {topping}
+            </label>
+          ))}
+        </form>
       </div>
-<div>
-      <form className="not-form">
-        <p>Sipariş Notu</p>
-        <textarea
-          id="comment"
-          placeholder="Siparişine eklemek istediğin not var mı?"
-          value={note}
-          onChange={(e) => setNote(e.target.value)}
-        ></textarea>
-        <SubmitBtn onSubmit={handleSubmit} />
-      </form>
-      <hr />
+
+      <div>
+        <form className="not-form">
+          <p>Sipariş Notu</p>
+          <textarea id="comment" placeholder="Siparişine eklemek istediğin not var mı?"></textarea>
+          <SubmitBtn />
+        </form>
+        <hr />
       </div>
-     
-    </div>
+      </>
   );
 }
 
